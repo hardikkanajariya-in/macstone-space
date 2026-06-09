@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Makstone Space
+
+Premium real-estate consultancy and investment advisory website with admin management portal.
+
+## Features
+
+### Public Website
+- Premium, editorial design with luxury typography and spacing
+- Homepage with hero, featured properties, categories, testimonials, FAQ, and CTAs
+- Property listing with search and filters
+- Immersive property detail pages with gallery, investment perspective, and inquiry forms
+- About, FAQ, and Contact pages
+- Full SEO: metadata, Open Graph, JSON-LD structured data, sitemap, robots.txt
+
+### Admin Portal (`/admin`)
+- Dashboard with property and inquiry statistics
+- Property management (CRUD, gallery, SEO, publishing)
+- Inquiry management with status tracking and notes
+- Invoice generation with print and PDF export
+- Content management for homepage and about page
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Set up environment
+cp .env.example .env
+
+# Run database migrations
+npm run db:migrate
+
+# Seed sample data
+npm run db:seed
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) for the public site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Admin login: [http://localhost:3000/admin/login](http://localhost:3000/admin/login)
+- Email: `admin@makstonespace.com`
+- Password: `admin123`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Environment Variables
 
-## Learn More
+| Variable | Description |
+|----------|-------------|
+| `DATABASE_URL` | SQLite connection string (use PostgreSQL in production) |
+| `AUTH_SECRET` | NextAuth secret key |
+| `NEXT_PUBLIC_SITE_URL` | Public site URL for SEO and sitemap |
+| `CLOUDINARY_*` | Optional cloud image storage |
 
-To learn more about Next.js, take a look at the following resources:
+## Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Next.js 16** (App Router)
+- **TypeScript**
+- **Tailwind CSS 4**
+- **Prisma** (SQLite dev / PostgreSQL production)
+- **NextAuth.js v5**
+- **Cloudinary** (optional image storage)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Production Deployment
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Switch `DATABASE_URL` to PostgreSQL
+2. Set a strong `AUTH_SECRET`
+3. Configure Cloudinary for image storage
+4. Set `NEXT_PUBLIC_SITE_URL` to your domain
+5. Run `npm run build && npm start`

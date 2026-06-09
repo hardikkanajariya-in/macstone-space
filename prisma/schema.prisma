@@ -1,0 +1,157 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Admin {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String   @default("Administrator")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Property {
+  id               String          @id @default(cuid())
+  slug             String          @unique
+  title            String
+  description      String
+  shortDescription String?
+  propertyType     String
+  category         String
+  status           String          @default("available")
+  price            Float
+  priceLabel       String?
+  area             Float?
+  areaUnit         String          @default("sq.ft")
+  configuration    String?
+  possession       String?
+  ownership        String?
+  facing           String?
+  propertyId       String          @unique
+  location         String
+  city             String          @default("Ahmedabad")
+  state            String          @default("Gujarat")
+  address          String?
+  latitude         Float?
+  longitude        Float?
+  featured         Boolean         @default(false)
+  published        Boolean         @default(false)
+  highlights       String?
+  amenities        String?
+  investmentNotes  String?
+  locationAdvantages String?
+  seoTitle         String?
+  seoDescription   String?
+  seoKeywords      String?
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+  images           PropertyImage[]
+  inquiries        Inquiry[]
+  invoiceItems     InvoiceItem[]
+}
+
+model PropertyImage {
+  id         String   @id @default(cuid())
+  propertyId String
+  property   Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+  url        String
+  publicId   String?
+  alt        String?
+  order      Int      @default(0)
+  isPrimary  Boolean  @default(false)
+  createdAt  DateTime @default(now())
+}
+
+model Inquiry {
+  id           String    @id @default(cuid())
+  name         String
+  email        String
+  phone        String
+  message      String?
+  type         String    @default("general")
+  status       String    @default("new")
+  notes        String?
+  followUpDate DateTime?
+  propertyId   String?
+  property     Property? @relation(fields: [propertyId], references: [id], onDelete: SetNull)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model Invoice {
+  id            String        @id @default(cuid())
+  invoiceNumber String        @unique
+  clientName    String
+  clientEmail   String?
+  clientPhone   String?
+  clientAddress String?
+  description   String?
+  subtotal      Float
+  taxRate       Float         @default(18)
+  taxAmount     Float
+  total         Float
+  notes         String?
+  status        String        @default("draft")
+  issuedAt      DateTime      @default(now())
+  dueDate       DateTime?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  items         InvoiceItem[]
+}
+
+model InvoiceItem {
+  id          String    @id @default(cuid())
+  invoiceId   String
+  invoice     Invoice   @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+  propertyId  String?
+  property    Property? @relation(fields: [propertyId], references: [id], onDelete: SetNull)
+  description String
+  quantity    Float     @default(1)
+  unitPrice   Float
+  amount      Float
+}
+
+model Faq {
+  id        String   @id @default(cuid())
+  question  String
+  answer    String
+  category  String   @default("general")
+  order     Int      @default(0)
+  published Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Testimonial {
+  id        String   @id @default(cuid())
+  name      String
+  role      String?
+  content   String
+  rating    Int      @default(5)
+  image     String?
+  published Boolean  @default(true)
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SiteContent {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String
+  updatedAt DateTime @updatedAt
+}
+
+model Activity {
+  id        String   @id @default(cuid())
+  action    String
+  entity    String
+  entityId  String?
+  details   String?
+  createdAt DateTime @default(now())
+}
