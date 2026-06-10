@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/public/SectionHeading";
 import { PropertyFilters } from "@/components/public/PropertyFilters";
 import { createMetadata } from "@/lib/seo";
 import { COMPANY } from "@/lib/constants";
+import { FadeInUp } from "@/components/public/MotionComponents";
 
 export const metadata = createMetadata({
   title: "Properties",
@@ -40,37 +41,47 @@ export default async function PropertiesPage({ searchParams }: PageProps) {
 
   return (
     <>
-      <section className="pt-32 pb-12 md:pt-40 md:pb-16 bg-surface-warm">
+      {/* Title Section */}
+      <section className="pt-40 pb-16 md:pt-48 md:pb-24 bg-surface border-b border-border/20">
         <div className="container-wide px-5 md:px-8">
-          <SectionHeading
-            label="Portfolio"
-            title="Curated Properties"
-            description="A distinguished collection of residential, commercial, and investment opportunities."
-          />
+          <FadeInUp>
+            <SectionHeading
+              label="Bespoke Portfolio"
+              title="Curated Collections"
+              description="A distinguished collection of residential, commercial, and investment opportunities in Gujarat."
+            />
+          </FadeInUp>
         </div>
       </section>
 
-      <section className="pb-20 md:pb-28">
+      {/* Main List Section */}
+      <section className="py-16 md:py-24 bg-background">
         <div className="container-wide px-5 md:px-8">
-          <Suspense fallback={<div className="h-20" />}>
-            <PropertyFilters />
-          </Suspense>
+          <FadeInUp delay={0.1}>
+            <Suspense fallback={<div className="h-20" />}>
+              <PropertyFilters />
+            </Suspense>
+          </FadeInUp>
 
           {properties.length === 0 ? (
-            <div className="text-center py-20">
-              <p className="font-display text-2xl mb-3">No properties found</p>
-              <p className="text-muted text-sm">
-                Try adjusting your filters or contact us for personalized recommendations.
+            <FadeInUp delay={0.2} className="text-center py-24 border border-border/40 rounded-2xl bg-surface/20">
+              <p className="font-display text-2xl text-foreground mb-3 font-normal">No properties found</p>
+              <p className="text-muted text-sm max-w-sm mx-auto font-light">
+                Try adjusting your search filters or contact our Private Office for confidential off-market requests.
               </p>
-            </div>
+            </FadeInUp>
           ) : (
             <>
-              <p className="text-sm text-muted mb-8">
-                {properties.length} propert{properties.length === 1 ? "y" : "ies"} found
-              </p>
+              <FadeInUp delay={0.2}>
+                <p className="text-xs text-accent uppercase tracking-wider font-semibold mb-8">
+                  {properties.length} asset{properties.length === 1 ? "" : "s"} identified
+                </p>
+              </FadeInUp>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-                {properties.map((property) => (
-                  <PropertyCard key={property.id} property={property} />
+                {properties.map((property, index) => (
+                  <FadeInUp key={property.id} delay={0.05 * (index % 3)} className="h-full">
+                    <PropertyCard property={property} />
+                  </FadeInUp>
                 ))}
               </div>
             </>

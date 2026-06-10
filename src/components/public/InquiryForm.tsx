@@ -56,13 +56,13 @@ export function InquiryForm({
   }
 
   const inputClass =
-    "w-full px-4 py-3 bg-transparent border border-border text-sm placeholder:text-muted-light focus:border-accent transition-colors";
+    "w-full px-4 py-3.5 bg-surface/40 border border-border/80 text-sm text-foreground placeholder:text-muted/50 focus:border-accent focus:bg-surface/80 rounded-lg transition-all duration-350 outline-none";
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={`space-y-4 ${className}`}>
+    <form onSubmit={handleSubmit(onSubmit)} className={`space-y-5 ${className}`}>
       {propertyTitle && (
-        <p className="text-sm text-muted mb-2">
-          Inquiring about: <span className="text-foreground font-medium">{propertyTitle}</span>
+        <p className="text-sm text-muted mb-3">
+          Inquiring about: <span className="text-accent font-medium">{propertyTitle}</span>
         </p>
       )}
 
@@ -73,7 +73,7 @@ export function InquiryForm({
             placeholder="Full Name *"
             className={inputClass}
           />
-          {errors.name && <p className="text-xs text-red-600 mt-1">{errors.name.message}</p>}
+          {errors.name && <p className="text-xs text-red-400 mt-1">{errors.name.message}</p>}
         </div>
         <div>
           <input
@@ -82,7 +82,7 @@ export function InquiryForm({
             type="tel"
             className={inputClass}
           />
-          {errors.phone && <p className="text-xs text-red-600 mt-1">{errors.phone.message}</p>}
+          {errors.phone && <p className="text-xs text-red-400 mt-1">{errors.phone.message}</p>}
         </div>
       </div>
 
@@ -96,7 +96,7 @@ export function InquiryForm({
           type="email"
           className={inputClass}
         />
-        {errors.email && <p className="text-xs text-red-600 mt-1">{errors.email.message}</p>}
+        {errors.email && <p className="text-xs text-red-400 mt-1">{errors.email.message}</p>}
       </div>
 
       {variant !== "compact" && (
@@ -117,7 +117,7 @@ export function InquiryForm({
       <button
         type="submit"
         disabled={status === "loading"}
-        className="btn-primary w-full md:w-auto disabled:opacity-50"
+        className="btn-accent w-full md:w-auto font-semibold px-8 py-3.5 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {status === "loading"
           ? "Sending..."
@@ -127,7 +127,7 @@ export function InquiryForm({
       </button>
 
       {status === "error" && (
-        <p className="text-sm text-red-600">Something went wrong. Please try again or call us directly.</p>
+        <p className="text-sm text-red-400 mt-2">Something went wrong. Please try again or call us directly.</p>
       )}
     </form>
   );

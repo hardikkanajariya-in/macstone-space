@@ -23,13 +23,15 @@ export function FaqAccordion({ faqs }: { faqs: Faq[] }) {
               onClick={() => setOpenId(isOpen ? null : faq.id)}
               className="w-full flex items-center justify-between py-5 text-left group"
             >
-              <span className="font-display text-lg pr-8 group-hover:text-accent transition-colors">
+              <span className={`font-display text-lg pr-8 group-hover:text-accent transition-colors ${
+                isOpen ? "text-accent" : "text-foreground"
+              }`}>
                 {faq.question}
               </span>
               <ChevronDown
                 size={18}
-                className={`shrink-0 text-muted transition-transform duration-300 ${
-                  isOpen ? "rotate-180" : ""
+                className={`shrink-0 transition-transform duration-300 ${
+                  isOpen ? "rotate-180 text-accent" : "text-muted"
                 }`}
               />
             </button>

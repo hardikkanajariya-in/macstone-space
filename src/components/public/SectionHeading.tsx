@@ -16,23 +16,29 @@ export function SectionHeading({
   return (
     <div
       className={`mb-12 md:mb-16 ${
-        align === "center" ? "text-center mx-auto max-w-2xl" : "max-w-xl"
+        align === "center" ? "text-center mx-auto max-w-2xl" : "max-w-2xl"
       }`}
     >
-      {label && <p className="label mb-4">{label}</p>}
+      {label && (
+        <span className="label block text-xs font-semibold tracking-[0.25em] text-accent mb-3">
+          {label}
+        </span>
+      )}
       <h2
-        className={`heading-md mb-4 ${light ? "text-white" : "text-foreground"}`}
+        className={`heading-lg font-display tracking-wide font-normal mb-5 text-foreground`}
       >
         {title}
       </h2>
-      {align === "center" && <div className="divider mx-auto mb-6" />}
-      {align === "left" && <div className="divider mb-6" />}
+      
+      {align === "center" && (
+        <div className="h-[1px] w-32 mx-auto bg-gradient-to-r from-transparent via-accent/80 to-transparent mb-6" />
+      )}
+      {align === "left" && (
+        <div className="h-[1px] w-20 bg-gradient-to-r from-accent/80 to-transparent mb-6" />
+      )}
+
       {description && (
-        <p
-          className={`text-base leading-relaxed ${
-            light ? "text-white/70" : "text-muted"
-          }`}
-        >
+        <p className="text-base md:text-lg leading-relaxed text-muted font-light">
           {description}
         </p>
       )}

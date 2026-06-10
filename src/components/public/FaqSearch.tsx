@@ -52,17 +52,17 @@ export function FaqSearch({ faqs, categories }: { faqs: Faq[]; categories: strin
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search questions..."
-          className="w-full pl-11 pr-4 py-3 border border-border bg-transparent text-sm focus:border-accent transition-colors"
+          className="w-full pl-11 pr-4 py-3.5 bg-surface/50 border border-border/80 text-sm text-foreground placeholder:text-muted/50 focus:border-accent focus:bg-surface/85 rounded-lg transition-all duration-300 outline-none"
         />
       </div>
 
       <div className="flex flex-wrap gap-2 mb-10">
         <button
           onClick={() => setActiveCategory(null)}
-          className={`px-4 py-2 text-xs tracking-wide uppercase transition-colors ${
+          className={`px-4 py-2.5 text-[10px] tracking-widest uppercase font-semibold transition-all duration-300 rounded ${
             !activeCategory
-              ? "bg-charcoal text-white"
-              : "border border-border text-muted hover:border-charcoal"
+              ? "bg-accent text-[#0F1115] border border-accent"
+              : "border border-border/80 text-muted hover:border-accent hover:text-foreground"
           }`}
         >
           All
@@ -71,10 +71,10 @@ export function FaqSearch({ faqs, categories }: { faqs: Faq[]; categories: strin
           <button
             key={cat}
             onClick={() => setActiveCategory(cat)}
-            className={`px-4 py-2 text-xs tracking-wide uppercase transition-colors ${
+            className={`px-4 py-2.5 text-[10px] tracking-widest uppercase font-semibold transition-all duration-300 rounded ${
               activeCategory === cat
-                ? "bg-charcoal text-white"
-                : "border border-border text-muted hover:border-charcoal"
+                ? "bg-accent text-[#0F1115] border border-accent"
+                : "border border-border/80 text-muted hover:border-accent hover:text-foreground"
             }`}
           >
             {categoryLabels[cat] || cat}

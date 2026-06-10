@@ -4,6 +4,7 @@ import { FaqSearch } from "@/components/public/FaqSearch";
 import { createMetadata, faqJsonLd } from "@/lib/seo";
 import { COMPANY } from "@/lib/constants";
 import Link from "next/link";
+import { FadeInUp } from "@/components/public/MotionComponents";
 
 export const metadata = createMetadata({
   title: "Frequently Asked Questions",
@@ -25,31 +26,44 @@ export default async function FaqPage() {
         }}
       />
 
-      <section className="pt-32 pb-12 md:pt-40 md:pb-16">
+      {/* Header Section */}
+      <section className="pt-40 pb-16 md:pt-48 md:pb-24 bg-surface border-b border-border/20">
         <div className="container-narrow px-5 md:px-8 text-center">
-          <p className="label mb-4">FAQ</p>
-          <h1 className="heading-xl mb-6">Questions & Answers</h1>
-          <p className="text-muted max-w-lg mx-auto">
-            Everything you need to know about working with Makstone Space.
-          </p>
+          <FadeInUp>
+            <span className="label block text-xs font-semibold tracking-[0.25em] text-accent mb-4">
+              Client FAQ
+            </span>
+            <h1 className="heading-xl text-foreground font-display font-light mb-6">
+              Questions &amp; Answers
+            </h1>
+            <p className="text-muted text-sm md:text-base max-w-xl mx-auto font-light leading-relaxed">
+              Everything you need to know about our premium consulting advisory services.
+            </p>
+          </FadeInUp>
         </div>
       </section>
 
-      <section className="pb-20 md:pb-28">
+      {/* Search & Accordion Section */}
+      <section className="py-16 md:py-24 bg-background">
         <div className="container-narrow px-5 md:px-8">
-          <FaqSearch faqs={faqs} categories={categories} />
+          <FadeInUp delay={0.15}>
+            <FaqSearch faqs={faqs} categories={categories} />
+          </FadeInUp>
         </div>
       </section>
 
-      <section className="section-padding bg-surface-warm text-center">
+      {/* Bottom CTA Section */}
+      <section className="section-padding bg-surface text-center border-t border-border/20">
         <div className="container-narrow px-5 md:px-8">
-          <h2 className="heading-sm mb-4">Still have questions?</h2>
-          <p className="text-muted text-sm mb-8">
-            Our team is here to help. Reach out for personalized assistance.
-          </p>
-          <Link href="/contact" className="btn-primary">
-            Contact Us
-          </Link>
+          <FadeInUp>
+            <h2 className="heading-sm text-foreground mb-4 font-display font-normal">Still have questions?</h2>
+            <p className="text-muted text-sm mb-8 max-w-md mx-auto font-light leading-relaxed">
+              Our Private Office team is here to assist with tailored portfolios or documentation questions.
+            </p>
+            <Link href="/contact" className="btn-accent rounded-lg font-semibold">
+              Contact Private Office
+            </Link>
+          </FadeInUp>
         </div>
       </section>
     </>
