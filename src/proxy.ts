@@ -1,7 +1,11 @@
 import NextAuth from "next-auth";
 import { authConfig } from "@/lib/auth.config";
 
-export const { auth: proxy } = NextAuth(authConfig);
+const { auth } = NextAuth(authConfig);
+
+export async function proxy(request: Request) {
+  return auth(request as any);
+}
 
 export const config = {
   matcher: ["/admin/:path*"],
