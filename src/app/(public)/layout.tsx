@@ -1,6 +1,7 @@
 import { Playfair_Display, Inter, Manrope } from "next/font/google";
 import { Header } from "@/components/public/Header";
 import { Footer } from "@/components/public/Footer";
+import { InitialLoader } from "@/components/public/InitialLoader";
 import { organizationJsonLd } from "@/lib/seo";
 import { COMPANY } from "@/lib/constants";
 
@@ -39,6 +40,7 @@ export default function PublicLayout({
         />
       </head>
       <body className="min-h-full flex flex-col antialiased">
+        <InitialLoader />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
