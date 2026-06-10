@@ -21,8 +21,10 @@ export default function AdminRootLayout({
 }) {
   return (
     <html lang="en" className={`${dmSans.variable} h-full`}>
-      <body className="min-h-full antialiased bg-gray-50 text-gray-900 font-[family-name:var(--font-dm-sans)]">
-        <Providers>{children}</Providers>
+      <body className="min-h-full antialiased font-[family-name:var(--font-dm-sans)]">
+        <div className="min-h-screen bg-gray-50 text-gray-900">
+          <Providers>{children}</Providers>
+        </div>
       </body>
     </html>
   );
