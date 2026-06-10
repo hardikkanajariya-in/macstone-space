@@ -61,7 +61,7 @@ export function FaqSearch({ faqs, categories }: { faqs: Faq[]; categories: strin
           onClick={() => setActiveCategory(null)}
           className={`px-4 py-2.5 text-[10px] tracking-widest uppercase font-semibold transition-all duration-300 rounded ${
             !activeCategory
-              ? "bg-accent text-[#0F1115] border border-accent"
+              ? "bg-accent text-charcoal border border-accent"
               : "border border-border/80 text-muted hover:border-accent hover:text-foreground"
           }`}
         >
@@ -73,7 +73,7 @@ export function FaqSearch({ faqs, categories }: { faqs: Faq[]; categories: strin
             onClick={() => setActiveCategory(cat)}
             className={`px-4 py-2.5 text-[10px] tracking-widest uppercase font-semibold transition-all duration-300 rounded ${
               activeCategory === cat
-                ? "bg-accent text-[#0F1115] border border-accent"
+                ? "bg-accent text-charcoal border border-accent"
                 : "border border-border/80 text-muted hover:border-accent hover:text-foreground"
             }`}
           >

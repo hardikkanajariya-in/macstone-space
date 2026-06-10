@@ -37,7 +37,7 @@ export function PropertyCard({ property, variant = "default" }: PropertyCardProp
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0F1115]/90 via-[#0F1115]/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
             <div className="flex items-center gap-3 mb-3">
               <span className="label text-accent-light text-[0.625rem] font-semibold tracking-widest">{property.propertyType}</span>

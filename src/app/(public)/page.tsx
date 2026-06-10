@@ -336,7 +336,7 @@ export default async function HomePage() {
                   fill
                   className="object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
-                <span className="absolute top-4 left-4 bg-accent text-[#0F1115] text-[0.625rem] font-bold uppercase tracking-widest px-3 py-1 rounded">
+                <span className="absolute top-4 left-4 bg-accent text-charcoal text-[0.625rem] font-bold uppercase tracking-widest px-3 py-1 rounded">
                   Cover Feature
                 </span>
               </div>
@@ -422,7 +422,7 @@ export default async function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {CLIENT_JOURNEY.slice(0, 4).map((step) => (
                 <div key={step.step} className="group relative text-center lg:text-left">
-                  <div className="relative z-10 w-14 h-14 mx-auto lg:mx-0 rounded-full border border-accent bg-background flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-charcoal group-hover:shadow-[0_0_15px_rgba(199,163,106,0.4)] transition-all duration-500">
+                  <div className="relative z-10 w-14 h-14 mx-auto lg:mx-0 rounded-full border border-accent bg-background flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-charcoal group-hover:shadow-[0_0_15px_rgba(122,158,159,0.4)] transition-all duration-500">
                     <span className="font-numbers text-lg font-bold text-accent group-hover:text-charcoal">{step.step}</span>
                   </div>
                   <h3 className="font-display text-lg mb-2 text-foreground group-hover:text-accent transition-colors duration-300">
@@ -438,7 +438,7 @@ export default async function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 lg:mt-16">
               {CLIENT_JOURNEY.slice(4).map((step) => (
                 <div key={step.step} className="group relative text-center lg:text-left">
-                  <div className="relative z-10 w-14 h-14 mx-auto lg:mx-0 rounded-full border border-accent bg-background flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-charcoal group-hover:shadow-[0_0_15px_rgba(199,163,106,0.4)] transition-all duration-500">
+                  <div className="relative z-10 w-14 h-14 mx-auto lg:mx-0 rounded-full border border-accent bg-background flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-charcoal group-hover:shadow-[0_0_15px_rgba(122,158,159,0.4)] transition-all duration-500">
                     <span className="font-numbers text-lg font-bold text-accent group-hover:text-charcoal">{step.step}</span>
                   </div>
                   <h3 className="font-display text-lg mb-2 text-foreground group-hover:text-accent transition-colors duration-300">
@@ -510,7 +510,7 @@ export default async function HomePage() {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[#0F1115]/90 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-background/90 backdrop-blur-[2px]" />
         <div className="relative container-narrow text-center px-5 md:px-8">
           <span className="label block text-xs font-semibold tracking-[0.25em] text-accent mb-4">Private Office</span>
           <h2 className="heading-lg text-foreground mb-6 font-display font-normal">

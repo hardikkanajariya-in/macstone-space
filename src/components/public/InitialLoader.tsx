@@ -56,7 +56,7 @@ export function InitialLoader() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9, y: -20 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="w-16 h-16 mb-6 rounded-full border border-accent/40 flex items-center justify-center bg-surface/30 backdrop-blur-md shadow-[0_0_25px_rgba(199,163,106,0.15)]"
+              className="w-16 h-16 mb-6 rounded-full border border-accent/40 flex items-center justify-center bg-surface/30 backdrop-blur-md shadow-[0_0_25px_rgba(122,158,159,0.15)]"
             >
               <span className="font-display text-xl text-accent font-semibold tracking-wider">M</span>
             </motion.div>
@@ -91,7 +91,7 @@ export function InitialLoader() {
                 animate={{ left: "0%" }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 1.8, ease: [0.65, 0, 0.35, 1], delay: 0.2 }}
-                className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-accent to-accent-light shadow-[0_0_10px_rgba(199,163,106,0.5)]"
+                className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-accent to-accent-light shadow-[0_0_10px_rgba(122,158,159,0.5)]"
               />
             </div>
           </div>

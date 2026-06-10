@@ -69,7 +69,7 @@ export function Header() {
               <Phone size={12} className="text-accent" />
               {COMPANY.phoneDisplay}
             </a>
-            <Link href="/contact" className="btn-primary text-xs py-2.5 px-6 shadow-[0_4px_15px_rgba(199,163,106,0.15)] hover:shadow-[0_4px_25px_rgba(199,163,106,0.3)]">
+            <Link href="/contact" className="btn-primary text-xs py-2.5 px-6 shadow-[0_4px_15px_rgba(122,158,159,0.15)] hover:shadow-[0_4px_25px_rgba(122,158,159,0.3)]">
               Book Consultation
             </Link>
           </div>

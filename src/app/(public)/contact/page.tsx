@@ -25,7 +25,7 @@ export default function ContactPage() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[#0F1115]/85" />
+        <div className="absolute inset-0 bg-background/85" />
         <div className="relative container-wide px-5 md:px-8">
           <FadeInUp>
             <span className="label text-xs tracking-[0.25em] text-accent mb-4 block font-semibold">
