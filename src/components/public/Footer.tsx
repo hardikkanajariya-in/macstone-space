@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { COMPANY, PROPERTY_CATEGORIES } from "@/lib/constants";
 import { Mail, MapPin, Phone, ArrowRight } from "lucide-react";
 
@@ -50,9 +51,14 @@ export function Footer() {
       <div className="container-wide section-padding !pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-block mb-6 tracking-widest">
-              <span className="font-display text-2xl font-semibold text-foreground">MACSTONE</span>
-              <span className="font-display text-2xl font-light text-accent ml-1.5">SPACE</span>
+            <Link href="/" className="inline-block mb-6">
+              <Image
+                src="/logo-with-text.png"
+                alt="Macstone Space Logo"
+                width={180}
+                height={45}
+                className="h-10 w-auto object-contain brightness-110"
+              />
             </Link>
             <p className="text-muted text-sm leading-relaxed mb-6">
               Quiet luxury in real estate consultancy. Delivering bespoke property advisory and strategic portfolio construction for high-net-worth clients across Ahmedabad and Gujarat.
@@ -138,7 +144,21 @@ export function Footer() {
             <span className="hidden md:inline text-muted/40">|</span>
             <p className="text-accent-light font-medium tracking-wide">RERA Compliant Advisory</p>
           </div>
-          <p className="tracking-wide">Principal Advisory under {COMPANY.founder}</p>
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6">
+            <p className="tracking-wide">Principal Advisory under {COMPANY.founder}</p>
+            <span className="hidden md:inline text-muted/40">|</span>
+            <p className="tracking-wide">
+              Created by{" "}
+              <a
+                href="https://hardikkanajariya.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent-dark transition-colors font-medium"
+              >
+                hardikkanajariya.in
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

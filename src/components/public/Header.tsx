@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { COMPANY } from "@/lib/constants";
@@ -40,13 +41,15 @@ export function Header() {
         }`}
       >
         <div className="container-wide flex items-center justify-between h-20 md:h-24 px-5 md:px-8">
-          <Link href="/" className="group flex items-center tracking-widest">
-            <span className="font-display text-xl md:text-2xl font-semibold text-foreground group-hover:text-accent transition-colors duration-500">
-              MACSTONE
-            </span>
-            <span className="font-display text-xl md:text-2xl font-light text-accent ml-1.5">
-              SPACE
-            </span>
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo-with-text.png"
+              alt="Macstone Space"
+              width={160}
+              height={40}
+              className="h-9 w-auto object-contain brightness-110"
+              priority
+            />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-10">
@@ -69,7 +72,7 @@ export function Header() {
               <Phone size={12} className="text-accent" />
               {COMPANY.phoneDisplay}
             </a>
-            <Link href="/contact" className="btn-primary text-xs py-2.5 px-6 shadow-[0_4px_15px_rgba(122,158,159,0.15)] hover:shadow-[0_4px_25px_rgba(122,158,159,0.3)]">
+            <Link href="/contact" className="btn-primary text-xs py-2.5 px-6 shadow-[0_4px_15px_rgba(229, 178, 62, 0.15)] hover:shadow-[0_4px_25px_rgba(229, 178, 62, 0.3)]">
               Book Consultation
             </Link>
           </div>

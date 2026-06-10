@@ -1,24 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --background: #101418;
-  --foreground: #F7F8F9;
-  --muted: #B0B7BF;
-  --muted-light: #5F6975;
-  --accent: #7A9E9F;
-  --accent-dark: #64898B;
-  --accent-light: #92B5B6;
-  --surface: #232C36;
-  --surface-warm: #1A212A;
-  --surface-light: #F6F7F8;
-  --border: rgba(122, 158, 159, 0.15);
-  --border-light: rgba(122, 158, 159, 0.08);
-  --charcoal: #101418;
-  --cream: #F7F8F9;
-  --gold: #7A9E9F;
-  --hover-gold: #64898B;
-  --success: #5F8A6B;
-  --warning: #C89A52;
+  --background: #090B0E;
+  --foreground: #F8F9FA;
+  --muted: #A3ADB8;
+  --muted-light: #525E6B;
+  --accent: #E5B23E;
+  --accent-dark: #C29124;
+  --accent-light: #F2D283;
+  --surface: #13171F;
+  --surface-warm: #0E1117;
+  --surface-light: #F4F6F8;
+  --border: rgba(229, 178, 62, 0.2);
+  --border-light: rgba(229, 178, 62, 0.08);
+  --charcoal: #090B0E;
+  --cream: #F8F9FA;
+  --gold: #E5B23E;
+  --hover-gold: #C29124;
+  --success: #4E8A5E;
+  --warning: #D9A036;
 }
 
 @theme inline {
@@ -127,7 +127,7 @@ body {
   text-transform: uppercase;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   border: 1px solid var(--accent);
-  box-shadow: 0 4px 12px rgba(122, 158, 159, 0.1);
+  box-shadow: 0 4px 12px rgba(229, 178, 62, 0.1);
   cursor: pointer;
 }
 
@@ -135,7 +135,7 @@ body {
   background: var(--accent-dark);
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(122, 158, 159, 0.2);
+  box-shadow: 0 8px 20px rgba(229, 178, 62, 0.2);
   border-color: var(--accent-dark);
 }
 
@@ -157,11 +157,11 @@ body {
 }
 
 .btn-secondary:hover {
-  background: rgba(122, 158, 159, 0.08);
+  background: rgba(229, 178, 62, 0.08);
   border-color: var(--accent);
   color: var(--accent);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(122, 158, 159, 0.1);
+  box-shadow: 0 4px 12px rgba(229, 178, 62, 0.1);
 }
 
 .btn-accent {
@@ -178,7 +178,7 @@ body {
   text-transform: uppercase;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   border: 1px solid transparent;
-  box-shadow: 0 4px 15px rgba(122, 158, 159, 0.15);
+  box-shadow: 0 4px 15px rgba(229, 178, 62, 0.15);
   cursor: pointer;
 }
 
@@ -187,7 +187,7 @@ body {
   border-color: var(--accent-light);
   color: var(--accent-light);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(122, 158, 159, 0.25);
+  box-shadow: 0 8px 24px rgba(229, 178, 62, 0.25);
 }
 
 .heading-xl {

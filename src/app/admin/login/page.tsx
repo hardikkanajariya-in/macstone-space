@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -33,10 +34,14 @@ export default function AdminLoginPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-charcoal px-4">
       <div className="w-full max-w-md">
-        <div className="text-center mb-10">
-          <h1 className="text-2xl font-semibold text-white mb-2">
-            Makstone <span className="text-accent">Space</span>
-          </h1>
+        <div className="text-center mb-10 flex flex-col items-center">
+          <Image
+            src="/logo-with-text.png"
+            alt="Macstone Space"
+            width={180}
+            height={45}
+            className="h-10 w-auto object-contain mb-3 brightness-110"
+          />
           <p className="text-white/50 text-sm">Admin Portal</p>
         </div>
 
